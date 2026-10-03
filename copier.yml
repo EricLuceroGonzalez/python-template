@@ -1,0 +1,39 @@
+_subdirectory: template
+_templates_suffix: .jinja
+_message_after_copy: |
+  ✅ Proyecto "{{ project_name }}" creado.
+  Siguiente paso:
+    cd {{ _copier_conf.dst_path | basename }}
+    make setup
+
+project_name:
+  type: str
+  help: Nombre del proyecto (carpeta y paquete en PyPI), p. ej. atco-brkga
+  validator: >-
+    {% if not (project_name | regex_search('^[a-z][a-z0-9-]*$')) %}
+    Usa minúsculas, números y guiones (empieza por letra)
+    {% endif %}
+
+package_name:
+  type: str
+  help: Nombre del paquete Python (importable)
+  default: "{{ project_name | replace('-', '_') }}"
+
+description:
+  type: str
+  help: Descripción corta
+  default: ""
+
+python_version:
+  type: str
+  help: Versión mínima de Python
+  default: "3.11"
+  choices: ["3.10", "3.11", "3.12", "3.13"]
+
+author_name:
+  type: str
+  default: Eric Lucero Gonzalez
+
+author_email:
+  type: str
+  default: ericlucero501@gmail.com

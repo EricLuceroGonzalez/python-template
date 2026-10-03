@@ -1,0 +1,16 @@
+"""Punto de entrada: ``uv run python -m {{ package_name }}``."""
+
+import logging
+
+from {{ package_name }}.logging_setup import setup_logging
+
+logger = logging.getLogger(__name__)
+
+
+def main() -> None:
+    setup_logging(log_filename="{{ package_name }}.log")
+    logger.info("{{ project_name }} iniciado")
+
+
+if __name__ == "__main__":
+    main()
