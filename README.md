@@ -23,10 +23,19 @@ mi_proyecto/
 uv tool install copier
 ```
 
-## Crear un proyecto nuevo
+## Crear un proyecto nuevo desde este repositorio
 
 ```bash
 copier copy gh:EricLuceroGonzalez/python-template mi_proyecto
+cd mi_proyecto
+make setup
+```
+
+## Crear un proyecto nuevo con este repo guardado en local
+
+```bash
+cd PATH_DEL_PROYECTO/python-template
+copier copy python-template mi_proyecto
 cd mi_proyecto
 make setup
 ```

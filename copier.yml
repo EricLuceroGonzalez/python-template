@@ -27,7 +27,7 @@ description:
 python_version:
   type: str
   help: Versión mínima de Python
-  default: "3.11"
+  default: "3.13"
   choices: ["3.10", "3.11", "3.12", "3.13"]
 
 author_name:
@@ -36,4 +36,4 @@ author_name:
 
 author_email:
   type: str
-  default: ericlucero501@gmail.com
+  default: ericlucerog@gmail.com
